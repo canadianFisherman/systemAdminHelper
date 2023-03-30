@@ -68,7 +68,8 @@ class PingDialog(QDialog):
         if self.current_rb == 'IP':
             if self.check_IP():
                 values = self.check_IP()
-                print(parse(values[0], values[1], values[2]))
+                ping.show()
+                ping.label.setText(parse(values[0], values[1], values[2]))
 
             else:
                 errorDialog.show()
@@ -76,19 +77,24 @@ class PingDialog(QDialog):
         elif self.current_rb == 'Link':
             if self.check_link():
                 values = self.check_link()
-                print(parse(values[0], values[1], values[2]))
+                ping.show()
+                ping.label.setText(parse(values[0], values[1], values[2]))
             else:
                 errorDialog.show()
 
         elif self.current_rb == 'Range':
             if self.check_range():
                 values = self.check_range()
+                value = ''
                 for i in range(int(values[0][0].split('.')[-1]), int(values[0][1].split('.')[-1]) + 1):
                     ip = ''
                     for j in range(len(values[0][0].split('.')) - 1):
                         ip += values[0][0].split('.')[j] + '.'
                     ip += str(i)
-                    print(parse(ip, values[1], values[2]))
+                    ping.show()
+                    ping.label.setText('Загрузка')
+                    value += parse(ip, values[1], values[2])
+                ping.label.setText(value)
             else:
                 errorDialog.show()
 
@@ -172,6 +178,7 @@ class PingDialog(QDialog):
 
 
 class Ping(QWidget):
+
     def __init__(self):
         super().__init__()
         loadUi('../SystemAdminHelper/windows/ping.ui', self)
@@ -189,4 +196,3 @@ if __name__ == '__main__':
         sys.exit(app.exec())
     except SystemExit:
         print('Закрытие приложения')
-# Тест
