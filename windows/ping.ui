@@ -28,17 +28,14 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(107, 107, 107);</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QPlainTextEdit" name="plainTextEdit">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>30</y>
-     <width>720</width>
-     <height>420</height>
+     <x>160</x>
+     <y>40</y>
+     <width>491</width>
+     <height>391</height>
     </rect>
-   </property>
-   <property name="text">
-    <string/>
    </property>
   </widget>
  </widget>

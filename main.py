@@ -58,6 +58,7 @@ class PingDialog(QDialog):
         loadUi('../SystemAdminHelper/windows/inputForPing.ui', self)
         self.pb_OK.clicked.connect(self.run)
 
+
         self.rb_ip.toggled.connect(self.IP_clicked)
 
         self.rb_link.toggled.connect(self.link_clicked)
@@ -69,7 +70,9 @@ class PingDialog(QDialog):
             if self.check_IP():
                 values = self.check_IP()
                 ping.show()
-                ping.label.setText(parse(values[0], values[1], values[2]))
+                ping.plainTextEdit.setReadOnly(True)
+                # ping.plainTextEdit.setPlainText('Загрузка')
+                ping.plainTextEdit.setPlainText(parse(values[0], values[1], values[2]))
 
             else:
                 errorDialog.show()
@@ -78,7 +81,9 @@ class PingDialog(QDialog):
             if self.check_link():
                 values = self.check_link()
                 ping.show()
-                ping.label.setText(parse(values[0], values[1], values[2]))
+                ping.plainTextEdit.setReadOnly(True)
+                # ping.plainTextEdit.setPlainText('Загрузка')
+                ping.plainTextEdit.setPlainText(parse(values[0], values[1], values[2]))
             else:
                 errorDialog.show()
 
@@ -92,9 +97,11 @@ class PingDialog(QDialog):
                         ip += values[0][0].split('.')[j] + '.'
                     ip += str(i)
                     ping.show()
-                    ping.label.setText('Загрузка')
+                    ping.plainTextEdit.setReadOnly(True)
+                    # ping.plainTextEdit.setPlainText('Загрузка')
+                    value += '\n'
                     value += parse(ip, values[1], values[2])
-                ping.label.setText(value)
+                ping.plainTextEdit.setPlainText(value)
             else:
                 errorDialog.show()
 
@@ -169,12 +176,15 @@ class PingDialog(QDialog):
 
     def IP_clicked(self):
         self.current_rb = 'IP'
+        pingDialog.le_ip.setPlaceholderText('')
 
     def link_clicked(self):
         self.current_rb = 'Link'
+        pingDialog.le_ip.setPlaceholderText('')
 
     def range_clicked(self):
         self.current_rb = 'Range'
+        pingDialog.le_ip.setPlaceholderText('Введите два IP-адреса через пробел')
 
 
 class Ping(QWidget):

@@ -140,7 +140,7 @@ border-color: rgb(190, 190, 190);</string>
     <rect>
      <x>465</x>
      <y>90</y>
-     <width>201</width>
+     <width>241</width>
      <height>30</height>
     </rect>
    </property>
@@ -157,7 +157,7 @@ border-color: rgb(190, 190, 190);</string>
     <rect>
      <x>465</x>
      <y>160</y>
-     <width>201</width>
+     <width>241</width>
      <height>30</height>
     </rect>
    </property>
@@ -174,7 +174,7 @@ border-color: rgb(190, 190, 190);</string>
     <rect>
      <x>465</x>
      <y>250</y>
-     <width>201</width>
+     <width>241</width>
      <height>30</height>
     </rect>
    </property>
