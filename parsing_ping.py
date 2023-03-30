@@ -11,8 +11,8 @@ def parse(ip, packets, timeout):
                 f'Приблизительное время приёма-передачи в мс:\n' \
                 f'Минимальное = {request[-1].split()[2]} Максимальное = {request[-1].split()[5]} Среднее = ' \
                 f'{request[-1].split()[-1]}'
-    elif packets == "1":
-        value = f''
+    # elif packets == "1":
+    #     value = f''
     elif len(request) == 1:
         value = f'Хоста с таким именем не существует!'
     else:
@@ -22,4 +22,3 @@ def parse(ip, packets, timeout):
     return value
 
 
-print(parse('1.1.1.1', "1", "4"))

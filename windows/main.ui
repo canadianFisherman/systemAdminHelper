@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>739</width>
-    <height>558</height>
+    <width>800</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>739</width>
-    <height>558</height>
+    <width>800</width>
+    <height>500</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>739</width>
-    <height>558</height>
+    <width>800</width>
+    <height>500</height>
    </size>
   </property>
   <property name="baseSize">
@@ -31,11 +31,102 @@
   <property name="windowTitle">
    <string>SysAdminHelper</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(107, 107, 107);</string>
+  </property>
   <widget class="QPushButton" name="pb_ipconfig">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>160</x>
      <y>80</y>
+     <width>171</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 20;
+color: rgb(190, 190, 190);
+background-color: rgb(100, 100, 100);
+border: 2px solid;
+border-color: rgb(190, 190, 190);
+font: bold;
+</string>
+   </property>
+   <property name="text">
+    <string>ipconfig</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pb_tracer">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>80</y>
+     <width>171</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: bold;
+border-radius: 20;
+color: rgb(190, 190, 190);
+background-color: rgb(100, 100, 100);
+border: 2px solid;
+border-color: rgb(190, 190, 190);</string>
+   </property>
+   <property name="text">
+    <string>tracer</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>190</y>
+     <width>171</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: Bold;
+border-radius: 20;
+color: rgb(190, 190, 190);
+background-color: rgb(100, 100, 100);
+border: 2px solid;
+border-color: rgb(190, 190, 190);</string>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pb_ping">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>190</y>
      <width>171</width>
      <height>51</height>
     </rect>
@@ -49,115 +140,14 @@
    </property>
    <property name="styleSheet">
     <string notr="true">font: bold;
-</string>
-   </property>
-   <property name="text">
-    <string>ipconfig</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pb_tracer">
-   <property name="geometry">
-    <rect>
-     <x>440</x>
-     <y>80</y>
-     <width>171</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <weight>75</weight>
-     <italic>false</italic>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: bold;</string>
-   </property>
-   <property name="text">
-    <string>tracer</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_3">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>190</y>
-     <width>171</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <weight>75</weight>
-     <italic>false</italic>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: Bold;</string>
-   </property>
-   <property name="text">
-    <string>pathping</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pb_ping">
-   <property name="geometry">
-    <rect>
-     <x>440</x>
-     <y>190</y>
-     <width>171</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>14</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
+border-radius: 20;
+color: rgb(190, 190, 190);
+background-color: rgb(100, 100, 100);
+border: 2px solid;
+border-color: rgb(190, 190, 190);</string>
    </property>
    <property name="text">
     <string>Ping</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>310</y>
-     <width>171</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>getmac</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>444</x>
-     <y>310</y>
-     <width>171</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>nslookup</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_4">
-   <property name="geometry">
-    <rect>
-     <x>284</x>
-     <y>440</y>
-     <width>171</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>netstat</string>
    </property>
   </widget>
  </widget>
