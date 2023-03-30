@@ -189,3 +189,4 @@ if __name__ == '__main__':
         sys.exit(app.exec())
     except SystemExit:
         print('Закрытие приложения')
+# Тест
