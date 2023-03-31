@@ -1,7 +1,7 @@
 import os
 
 
-def parse(ip, packets, timeout):
+def parse_ping(ip, packets, timeout):
     request = list(os.popen(f'ping {ip} -n {packets} -w {timeout}'))
 
     if len(request[-1].split()) == 9:

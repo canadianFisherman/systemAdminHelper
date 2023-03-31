@@ -64,7 +64,7 @@ font: bold;
     <string>ipconfig</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pb_tracer">
+  <widget class="QPushButton" name="pb_tracert">
    <property name="geometry">
     <rect>
      <x>470</x>
@@ -90,7 +90,7 @@ border: 2px solid;
 border-color: rgb(190, 190, 190);</string>
    </property>
    <property name="text">
-    <string>tracer</string>
+    <string>tracert</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_3">
