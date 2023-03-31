@@ -37,6 +37,14 @@
      <height>391</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt &quot;Times New Roman&quot;;
+border-style:outset;
+</string>
+   </property>
+   <property name="plainText">
+    <string/>
+   </property>
   </widget>
  </widget>
  <resources/>
