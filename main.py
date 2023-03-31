@@ -17,7 +17,7 @@ class MainWindow(QWidget):
         loadUi('../SystemAdminHelper/windows/main.ui', self)
         self.pb_ipconfig.clicked.connect(self.show_ipconfig)
         self.pb_ping.clicked.connect(self.show_pingDialog)
-        self.pb_tracert.clicked.connect(self.show_tracertDialog)
+        self.pb_tracer.clicked.connect(self.show_tracertDialog)
 
     def show_ipconfig(self):
         ipconfig.show()

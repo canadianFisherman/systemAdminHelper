@@ -45,26 +45,25 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>14</pointsize>
-     <weight>75</weight>
+     <pointsize>15</pointsize>
+     <weight>50</weight>
      <italic>false</italic>
-     <bold>true</bold>
+     <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-radius: 20;
+    <string notr="true">
+border-radius: 20;
 color: rgb(190, 190, 190);
-background-color: rgb(100, 100, 100);
+background-color: rgb(103, 103, 103);
 border: 2px solid;
-border-color: rgb(190, 190, 190);
-font: bold;
-</string>
+border-color: rgb(190, 190, 190);</string>
    </property>
    <property name="text">
     <string>ipconfig</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pb_tracert">
+  <widget class="QPushButton" name="pb_tracer">
    <property name="geometry">
     <rect>
      <x>470</x>
@@ -75,22 +74,23 @@ font: bold;
    </property>
    <property name="font">
     <font>
-     <pointsize>14</pointsize>
-     <weight>75</weight>
+     <pointsize>15</pointsize>
+     <weight>50</weight>
      <italic>false</italic>
-     <bold>true</bold>
+     <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: bold;
+    <string notr="true">
+
 border-radius: 20;
 color: rgb(190, 190, 190);
-background-color: rgb(100, 100, 100);
+background-color: rgb(103, 103, 103);
 border: 2px solid;
 border-color: rgb(190, 190, 190);</string>
    </property>
    <property name="text">
-    <string>tracert</string>
+    <string>tracer</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_3">
@@ -104,17 +104,17 @@ border-color: rgb(190, 190, 190);</string>
    </property>
    <property name="font">
     <font>
-     <pointsize>14</pointsize>
-     <weight>75</weight>
+     <pointsize>15</pointsize>
+     <weight>50</weight>
      <italic>false</italic>
-     <bold>true</bold>
+     <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: Bold;
+    <string notr="true">
 border-radius: 20;
 color: rgb(190, 190, 190);
-background-color: rgb(100, 100, 100);
+background-color: rgb(103, 103, 103);
 border: 2px solid;
 border-color: rgb(190, 190, 190);</string>
    </property>
@@ -133,16 +133,17 @@ border-color: rgb(190, 190, 190);</string>
    </property>
    <property name="font">
     <font>
-     <weight>75</weight>
+     <pointsize>15</pointsize>
+     <weight>50</weight>
      <italic>false</italic>
-     <bold>true</bold>
+     <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: bold;
+    <string notr="true">
 border-radius: 20;
 color: rgb(190, 190, 190);
-background-color: rgb(100, 100, 100);
+background-color: rgb(103, 103, 103);
 border: 2px solid;
 border-color: rgb(190, 190, 190);</string>
    </property>
