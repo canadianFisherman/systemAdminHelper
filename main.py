@@ -8,6 +8,7 @@ from PyQt6.uic import loadUi
 from parsing_ipconfig import devices
 from parsing_ping import parse_ping
 from parsing_tracert import parse_tracert
+from parsing_getmac import parse_getmac
 
 
 # noinspection PyUnresolvedReferences
@@ -18,6 +19,7 @@ class MainWindow(QWidget):
         self.pb_ipconfig.clicked.connect(self.show_ipconfig)
         self.pb_ping.clicked.connect(self.show_pingDialog)
         self.pb_tracer.clicked.connect(self.show_tracertDialog)
+        self.pb_getmac.clicked.connect(self.show_getmac)
 
     def show_ipconfig(self):
         ipconfig.show()
@@ -27,6 +29,9 @@ class MainWindow(QWidget):
 
     def show_tracertDialog(self):
         tracertDialog.show()
+
+    def show_getmac(self):
+        getmac.show()
 
 
 # noinspection PyUnresolvedReferences
@@ -338,6 +343,16 @@ class Tracert(QWidget):
         self.plainTextEdit.setPlainText('Загрузка')
 
 
+class Getmac(QWidget):
+    def __init__(self):
+        super().__init__()
+        loadUi('../SystemAdminHelper/windows/getmac.ui', self)
+        self.plainTextEdit.setReadOnly(True)
+        value = parse_getmac()
+        self.plainTextEdit.setPlainText(value[0])
+        self.plainTextEdit_2.setPlainText(value[1])
+
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     mainWindow = MainWindow()
@@ -348,6 +363,7 @@ if __name__ == '__main__':
     ping = Ping()
     tracertDialog = TracertDialog()
     tracert = Tracert()
+    getmac = Getmac()
     try:
         sys.exit(app.exec())
     except SystemExit:
