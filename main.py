@@ -1,14 +1,15 @@
 import sys
 import time
+import os
 import ipaddress
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtWidgets import QWidget, QApplication, QLabel, QVBoxLayout, QTextEdit, QPushButton, QGridLayout, QLineEdit, \
     QPlainTextEdit, QTreeWidgetItem, QDialog, QRadioButton
 from PyQt6.uic import loadUi
-from parsing_ipconfig import devices
-from parsing_ping import parse_ping
-from parsing_tracert import parse_tracert
-from parsing_getmac import parse_getmac
+from operations.parsing_ipconfig import devices
+from operations.parsing_ping import parse_ping
+from operations.parsing_tracert import parse_tracert
+from operations.parsing_getmac import parse_getmac
 
 
 # noinspection PyUnresolvedReferences
@@ -367,4 +368,5 @@ if __name__ == '__main__':
     try:
         sys.exit(app.exec())
     except SystemExit:
+        print(os.path.dirname(sys.argv[0]))
         print('Закрытие приложения')

@@ -93,7 +93,7 @@ border-color: rgb(190, 190, 190);</string>
     <string>tracer</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="pb_getmac">
    <property name="geometry">
     <rect>
      <x>160</x>
@@ -119,7 +119,7 @@ border: 2px solid;
 border-color: rgb(190, 190, 190);</string>
    </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>getmac</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pb_ping">
