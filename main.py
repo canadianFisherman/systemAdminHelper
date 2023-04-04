@@ -1,4 +1,5 @@
 import sys
+from datetime import datetime
 import time
 import os
 import ipaddress
@@ -83,7 +84,11 @@ class PingDialog(QDialog):
                 ping.show()
                 ping.plainTextEdit.setReadOnly(True)
                 # ping.plainTextEdit.setPlainText('Загрузка')
-                ping.plainTextEdit.setPlainText(parse_ping(values[0], values[1], values[2]))
+                req = parse_ping(values[0], values[1], values[2])
+                ping.plainTextEdit.setPlainText(req)
+
+                with open(f'log/ping {datetime.now().strftime("%H-%M, %m-%d-%Y")}.txt', 'w', encoding='utf-8') as file:
+                    file.write(req)
 
             else:
                 errorDialog.show()
@@ -94,7 +99,12 @@ class PingDialog(QDialog):
                 ping.show()
                 ping.plainTextEdit.setReadOnly(True)
                 # ping.plainTextEdit.setPlainText('Загрузка')
-                ping.plainTextEdit.setPlainText(parse_ping(values[0], values[1], values[2]))
+                req = parse_ping(values[0], values[1], values[2])
+                ping.plainTextEdit.setPlainText(req)
+
+                with open(f'log/ping {datetime.now().strftime("%H-%M, %m-%d-%Y")}.txt', 'w', encoding='utf-8') as file:
+                    file.write(req)
+
             else:
                 errorDialog.show()
 
@@ -113,6 +123,9 @@ class PingDialog(QDialog):
                     value += '\n'
                     value += parse_ping(ip, values[1], values[2])
                 ping.plainTextEdit.setPlainText(value)
+
+                with open(f'log/ping {datetime.now().strftime("%H-%M, %m-%d-%Y")}.txt', 'w', encoding='utf-8') as file:
+                    file.write(value)
             else:
                 errorDialog.show()
 
@@ -224,8 +237,11 @@ class TracertDialog(QDialog):
                 tracert.show()
                 tracert.plainTextEdit.setPlainText('Загрузка')
                 # time.sleep(5000)
-                t = parse_tracert(values[0], values[1], values[2])
-                tracert.plainTextEdit.setPlainText(t)
+                req = parse_tracert(values[0], values[1], values[2])
+                ping.plainTextEdit.setPlainText(req)
+
+                with open(f'log/tracert {datetime.now().strftime("%H-%M, %m-%d-%Y")}.txt', 'w', encoding='utf-8') as file:
+                    file.write(req)
 
             else:
                 errorDialog.show()
@@ -236,7 +252,11 @@ class TracertDialog(QDialog):
                 tracert.show()
                 tracert.plainTextEdit.setReadOnly(True)
                 # ping.plainTextEdit.setPlainText('Загрузка')
-                tracert.plainTextEdit.setPlainText(parse_tracert(values[0], values[1], values[2]))
+                req = parse_tracert(values[0], values[1], values[2])
+                ping.plainTextEdit.setPlainText(req)
+
+                with open(f'log/tracert {datetime.now().strftime("%H-%M, %m-%d-%Y")}.txt', 'w', encoding='utf-8') as file:
+                    file.write(req)
             else:
                 errorDialog.show()
 
@@ -254,6 +274,9 @@ class TracertDialog(QDialog):
                     value += '\n'
                     value += parse_tracert(ip, values[1], values[2])
                 tracert.plainTextEdit.setPlainText(value)
+                with open(f'log/tracert {datetime.now().strftime("%H-%M, %m-%d-%Y")}.txt', 'w',
+                          encoding='utf-8') as file:
+                    file.write(value)
             else:
                 errorDialog.show()
 
@@ -341,7 +364,7 @@ class Tracert(QWidget):
     def __init__(self):
         super().__init__()
         loadUi('../SystemAdminHelper/windows/tracert.ui', self)
-        self.plainTextEdit.setPlainText('Загрузка')
+
 
 
 class Getmac(QWidget):
