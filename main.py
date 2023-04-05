@@ -25,6 +25,17 @@ class MainWindow(QWidget):
 
     def show_ipconfig(self):
         ipconfig.show()
+        for k, v in devices.items():
+            value = QTreeWidgetItem(ipconfig.treeWidget)
+            value.setText(0, k.encode("windows-1251").decode("cp866"))
+
+            for s in v:
+                value1 = QTreeWidgetItem(value)
+                value1.setText(0, s)
+                value.addChild(value1)
+            with open(f'log/ipconfig {datetime.now().strftime("%H-%M, %m-%d-%Y")}.txt', 'a',
+                      encoding='utf-8') as file:
+                file.write(f'{k.encode("windows-1251").decode("cp866")}: {v}\n')
 
     def show_pingDialog(self):
         pingDialog.show()
@@ -34,7 +45,9 @@ class MainWindow(QWidget):
 
     def show_getmac(self):
         getmac.show()
-
+        with open(f'log/getmac {datetime.now().strftime("%H-%M, %m-%d-%Y")}.txt', 'w',
+                  encoding='utf-8') as file:
+            file.write(getmac.value[0] + '\n' + getmac.value[1])
 
 # noinspection PyUnresolvedReferences
 class Ipconfig(QWidget):
@@ -42,14 +55,7 @@ class Ipconfig(QWidget):
         super().__init__()
         loadUi('../SystemAdminHelper/windows/ipconfig.ui', self)
 
-        for k, v in devices.items():
-            value = QTreeWidgetItem(self.treeWidget)
-            value.setText(0, k)
 
-            for s in v:
-                value1 = QTreeWidgetItem(value)
-                value1.setText(0, s)
-                value.addChild(value1)
 
 
 class ErrorDialog(QDialog):
@@ -240,7 +246,8 @@ class TracertDialog(QDialog):
                 req = parse_tracert(values[0], values[1], values[2])
                 ping.plainTextEdit.setPlainText(req)
 
-                with open(f'log/tracert {datetime.now().strftime("%H-%M, %m-%d-%Y")}.txt', 'w', encoding='utf-8') as file:
+                with open(f'log/tracert {datetime.now().strftime("%H-%M, %m-%d-%Y")}.txt', 'w',
+                          encoding='utf-8') as file:
                     file.write(req)
 
             else:
@@ -255,7 +262,8 @@ class TracertDialog(QDialog):
                 req = parse_tracert(values[0], values[1], values[2])
                 ping.plainTextEdit.setPlainText(req)
 
-                with open(f'log/tracert {datetime.now().strftime("%H-%M, %m-%d-%Y")}.txt', 'w', encoding='utf-8') as file:
+                with open(f'log/tracert {datetime.now().strftime("%H-%M, %m-%d-%Y")}.txt', 'w',
+                          encoding='utf-8') as file:
                     file.write(req)
             else:
                 errorDialog.show()
@@ -366,15 +374,15 @@ class Tracert(QWidget):
         loadUi('../SystemAdminHelper/windows/tracert.ui', self)
 
 
-
 class Getmac(QWidget):
     def __init__(self):
         super().__init__()
         loadUi('../SystemAdminHelper/windows/getmac.ui', self)
         self.plainTextEdit.setReadOnly(True)
-        value = parse_getmac()
-        self.plainTextEdit.setPlainText(value[0])
-        self.plainTextEdit_2.setPlainText(value[1])
+        self.value = parse_getmac()
+        self.plainTextEdit.setPlainText(self.value[0])
+        self.plainTextEdit_2.setPlainText(self.value[1])
+
 
 
 if __name__ == '__main__':
