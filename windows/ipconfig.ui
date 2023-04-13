@@ -26,7 +26,9 @@
    <string>Детали соединения</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(107, 107, 107);</string>
+   <string notr="true">
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(50, 50, 50, 255), stop:1 rgba(70, 70, 70, 255));
+</string>
   </property>
   <widget class="QTreeWidget" name="treeWidget">
    <property name="geometry">

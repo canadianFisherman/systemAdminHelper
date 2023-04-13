@@ -25,17 +25,31 @@
   <property name="windowTitle">
    <string>Ошибка</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(50, 50, 50, 255), stop:1 rgba(70, 70, 70, 255));
+</string>
+  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>90</y>
      <width>401</width>
-     <height>41</height>
+     <height>71</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Yu Gothic UI Light</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(190, 190, 190);
+background-color: rgba(255, 255, 255, 0);
+</string>
+   </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Проверьте корректность вводимых данных!&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Пожалуйста,&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;проверьте корректность вводимых данных!&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
@@ -46,6 +60,21 @@
      <width>141</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Calibri Light</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 8;
+color: rgb(190, 190, 190);
+background-color: rgb(57, 57, 57);
+border: 2px solid;
+border-color: rgb(190, 190, 190);</string>
    </property>
    <property name="text">
     <string>OK</string>

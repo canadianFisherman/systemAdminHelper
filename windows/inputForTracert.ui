@@ -26,7 +26,7 @@
    <string>Ввод информации</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(107, 107, 107);</string>
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(50, 50, 50, 255), stop:1 rgba(70, 70, 70, 255));</string>
   </property>
   <widget class="QPushButton" name="pb_OK">
    <property name="geometry">
@@ -39,15 +39,16 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>18</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
+     <family>Calibri Light</family>
+     <pointsize>25</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
     <string notr="true">border-radius: 20;
 color: rgb(190, 190, 190);
-background-color: rgb(100, 100, 100);
+background-color: rgb(57, 57, 57);
 border: 2px solid;
 border-color: rgb(190, 190, 190);</string>
    </property>
@@ -59,18 +60,20 @@ border-color: rgb(190, 190, 190);</string>
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>90</y>
+     <y>80</y>
      <width>331</width>
-     <height>30</height>
+     <height>35</height>
     </rect>
    </property>
    <property name="font">
     <font>
+     <family>Yu Gothic UI Light</family>
      <pointsize>10</pointsize>
     </font>
    </property>
    <property name="styleSheet">
     <string notr="true">color: rgb(190, 190, 190);
+background-color: rgba(255, 255, 255, 0);
 </string>
    </property>
    <property name="text">
@@ -83,11 +86,17 @@ border-color: rgb(190, 190, 190);</string>
      <x>60</x>
      <y>160</y>
      <width>391</width>
-     <height>60</height>
+     <height>65</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Yu Gothic UI Light</family>
+    </font>
+   </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color: rgba(255, 255, 255, 0);
+</string>
    </property>
    <property name="text">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; color:#bebebe;&quot;&gt;Введите максимальное число прыжков:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#ababab;&quot;&gt;(по умолчанию до 30 прыжков)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -97,18 +106,20 @@ border-color: rgb(190, 190, 190);</string>
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>240</y>
+     <y>254</y>
      <width>331</width>
-     <height>60</height>
+     <height>65</height>
     </rect>
    </property>
    <property name="font">
     <font>
+     <family>Yu Gothic UI Light</family>
      <pointsize>10</pointsize>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color: rgba(255, 255, 255, 0);
+</string>
    </property>
    <property name="text">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; color:#bebebe;&quot;&gt;Введите длительность таймаута:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#ababab;&quot;&gt;(по умолчанию 4 секунды)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -129,17 +140,19 @@ border-color: rgb(190, 190, 190);</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(171, 171, 171);</string>
+    <string notr="true">color: rgb(190, 190, 190);
+background-color: rgba(255, 255, 255, 0);
+</string>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;обязательно к заполнению*&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Обязательно к заполнению*&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="le_ip">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>90</y>
+     <x>470</x>
+     <y>85</y>
      <width>241</width>
      <height>30</height>
     </rect>
@@ -147,7 +160,7 @@ border-color: rgb(190, 190, 190);</string>
    <property name="styleSheet">
     <string notr="true">border-radius: 8;
 color: rgb(190, 190, 190);
-background-color: rgb(100, 100, 100);
+background-color: rgb(57, 57, 57);
 border: 2px solid;
 border-color: rgb(190, 190, 190);</string>
    </property>
@@ -155,8 +168,8 @@ border-color: rgb(190, 190, 190);</string>
   <widget class="QLineEdit" name="le_jumps">
    <property name="geometry">
     <rect>
-     <x>465</x>
-     <y>160</y>
+     <x>470</x>
+     <y>165</y>
      <width>241</width>
      <height>30</height>
     </rect>
@@ -164,7 +177,7 @@ border-color: rgb(190, 190, 190);</string>
    <property name="styleSheet">
     <string notr="true">border-radius: 8;
 color: rgb(190, 190, 190);
-background-color: rgb(100, 100, 100);
+background-color: rgb(57, 57, 57);
 border: 2px solid;
 border-color: rgb(190, 190, 190);</string>
    </property>
@@ -172,8 +185,8 @@ border-color: rgb(190, 190, 190);</string>
   <widget class="QLineEdit" name="le_timeout">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>250</y>
+     <x>470</x>
+     <y>254</y>
      <width>241</width>
      <height>30</height>
     </rect>
@@ -181,7 +194,7 @@ border-color: rgb(190, 190, 190);</string>
    <property name="styleSheet">
     <string notr="true">border-radius: 8;
 color: rgb(190, 190, 190);
-background-color: rgb(100, 100, 100);
+background-color: rgb(57, 57, 57);
 border: 2px solid;
 border-color: rgb(190, 190, 190);</string>
    </property>
@@ -193,10 +206,15 @@ border-color: rgb(190, 190, 190);</string>
    <property name="geometry">
     <rect>
      <x>119</x>
-     <y>130</y>
+     <y>120</y>
      <width>82</width>
      <height>17</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(190, 190, 190);
+background-color: rgba(255, 255, 255, 0);
+</string>
    </property>
    <property name="text">
     <string>IP-адрес</string>
@@ -206,10 +224,15 @@ border-color: rgb(190, 190, 190);</string>
    <property name="geometry">
     <rect>
      <x>229</x>
-     <y>130</y>
+     <y>120</y>
      <width>82</width>
      <height>17</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(190, 190, 190);
+background-color: rgba(255, 255, 255, 0);
+</string>
    </property>
    <property name="text">
     <string>Ссылка</string>
@@ -219,10 +242,15 @@ border-color: rgb(190, 190, 190);</string>
    <property name="geometry">
     <rect>
      <x>330</x>
-     <y>130</y>
+     <y>120</y>
      <width>141</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(190, 190, 190);
+background-color: rgba(255, 255, 255, 0);
+</string>
    </property>
    <property name="text">
     <string>Диапазон IP-адресов</string>

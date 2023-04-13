@@ -23,10 +23,11 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>ping</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(107, 107, 107);</string>
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(50, 50, 50, 255), stop:1 rgba(70, 70, 70, 255));
+</string>
   </property>
   <widget class="QPlainTextEdit" name="plainTextEdit">
    <property name="geometry">
@@ -38,8 +39,9 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 14pt &quot;Times New Roman&quot;;
+    <string notr="true">color: rgb(190, 190, 190);
 border-style:outset;
+background-color: rgba(255, 255, 255, 0);
 </string>
    </property>
    <property name="plainText">

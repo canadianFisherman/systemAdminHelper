@@ -31,7 +31,9 @@
    <string>Ввод информации</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(107, 107, 107);</string>
+   <string notr="true">
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(50, 50, 50, 255), stop:1 rgba(70, 70, 70, 255));
+</string>
   </property>
   <widget class="QPushButton" name="pb_OK">
    <property name="geometry">
@@ -53,7 +55,7 @@
    <property name="styleSheet">
     <string notr="true">border-radius: 20;
 color: rgb(190, 190, 190);
-background-color: rgb(103, 103, 103);
+background-color: rgb(57, 57, 57);
 border: 2px solid;
 border-color: rgb(190, 190, 190);</string>
    </property>
@@ -64,7 +66,7 @@ border-color: rgb(190, 190, 190);</string>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>135</x>
+     <x>130</x>
      <y>90</y>
      <width>331</width>
      <height>30</height>
@@ -78,6 +80,7 @@ border-color: rgb(190, 190, 190);</string>
    </property>
    <property name="styleSheet">
     <string notr="true">color: rgb(190, 190, 190);
+background-color: rgba(255, 255, 255, 0);
 </string>
    </property>
    <property name="text">
@@ -87,10 +90,10 @@ border-color: rgb(190, 190, 190);</string>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>135</x>
+     <x>130</x>
      <y>150</y>
      <width>331</width>
-     <height>60</height>
+     <height>71</height>
     </rect>
    </property>
    <property name="font">
@@ -99,7 +102,9 @@ border-color: rgb(190, 190, 190);</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">color: rgb(190, 190, 190);
+background-color: rgba(255, 255, 255, 0);
+</string>
    </property>
    <property name="text">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; color:#bebebe;&quot;&gt;Введите количество пакетов:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#ababab;&quot;&gt;(по умолчанию 4 пакета)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -108,10 +113,10 @@ border-color: rgb(190, 190, 190);</string>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>135</x>
-     <y>240</y>
+     <x>130</x>
+     <y>230</y>
      <width>331</width>
-     <height>60</height>
+     <height>71</height>
     </rect>
    </property>
    <property name="font">
@@ -121,7 +126,9 @@ border-color: rgb(190, 190, 190);</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">color: rgb(190, 190, 190);
+background-color: rgba(255, 255, 255, 0);
+</string>
    </property>
    <property name="text">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; color:#bebebe;&quot;&gt;Введите длительность таймаута:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#ababab;&quot;&gt;(по умолчанию 4 секунды)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -142,7 +149,9 @@ border-color: rgb(190, 190, 190);</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(171, 171, 171);</string>
+    <string notr="true">color: rgb(171, 171, 171);color: rgb(190, 190, 190);
+background-color: rgba(255, 255, 255, 0);
+</string>
    </property>
    <property name="text">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Обязательно к заполнению*&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -151,50 +160,22 @@ border-color: rgb(190, 190, 190);</string>
   <widget class="QLineEdit" name="le_ip">
    <property name="geometry">
     <rect>
-     <x>465</x>
-     <y>90</y>
+     <x>460</x>
+     <y>93</y>
      <width>201</width>
      <height>30</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">border-radius: 8;
-color: rgb(190, 190, 190);
-background-color: rgb(103, 103, 103);
-border: 2px solid;
-border-color: rgb(190, 190, 190);</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="le_packets">
-   <property name="geometry">
-    <rect>
-     <x>465</x>
-     <y>160</y>
-     <width>201</width>
-     <height>30</height>
-    </rect>
+   <property name="font">
+    <font>
+     <family>Yu Gothic UI Light</family>
+     <pointsize>11</pointsize>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">border-radius: 8;
 color: rgb(190, 190, 190);
-background-color: rgb(103, 103, 103);
-border: 2px solid;
-border-color: rgb(190, 190, 190);</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="le_timeout">
-   <property name="geometry">
-    <rect>
-     <x>465</x>
-     <y>250</y>
-     <width>201</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-radius: 8;
-color: rgb(190, 190, 190);
-background-color: rgb(103, 103, 103);
+background-color: rgb(57, 57, 57);
 border: 2px solid;
 border-color: rgb(190, 190, 190);</string>
    </property>
@@ -202,14 +183,89 @@ border-color: rgb(190, 190, 190);</string>
     <string/>
    </property>
   </widget>
+  <widget class="QLineEdit" name="le_packets">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>158</y>
+     <width>201</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Yu Gothic UI Light</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 8;
+color: rgb(190, 190, 190);
+background-color: rgb(57, 57, 57);
+border: 2px solid;
+border-color: rgb(190, 190, 190);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="le_timeout">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>238</y>
+     <width>201</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Yu Gothic UI Light</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 8;
+color: rgb(190, 190, 190);
+background-color: rgb(57, 57, 57);
+border: 2px solid;
+border-color: rgb(190, 190, 190);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="rb_range">
+   <property name="geometry">
+    <rect>
+     <x>371</x>
+     <y>130</y>
+     <width>141</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(190, 190, 190);
+background-color: rgba(255, 255, 255, 0);
+</string>
+   </property>
+   <property name="text">
+    <string>Диапазон IP-адресов</string>
+   </property>
+  </widget>
   <widget class="QRadioButton" name="rb_ip">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>160</x>
      <y>130</y>
      <width>82</width>
      <height>17</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(190, 190, 190);
+background-color: rgba(255, 255, 255, 0);
+</string>
    </property>
    <property name="text">
     <string>IP-адрес</string>
@@ -218,27 +274,19 @@ border-color: rgb(190, 190, 190);</string>
   <widget class="QRadioButton" name="rb_link">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>270</x>
      <y>130</y>
      <width>82</width>
      <height>17</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(190, 190, 190);
+background-color: rgba(255, 255, 255, 0);
+</string>
+   </property>
    <property name="text">
     <string>Ссылка</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="rb_range">
-   <property name="geometry">
-    <rect>
-     <x>450</x>
-     <y>130</y>
-     <width>131</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Диапазон IP-адресов</string>
    </property>
   </widget>
  </widget>
