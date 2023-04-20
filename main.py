@@ -124,36 +124,16 @@ class PingDialog(QDialog):
 
         elif self.current_rb == 'Link':
             if self.check_link():
-                values = self.check_link()
-                ping.show()
-                ping.plainTextEdit.setReadOnly(True)
-                # ping.plainTextEdit.setPlainText('Загрузка')
-                req = parse_ping(values[0], values[1], values[2])
-                ping.plainTextEdit.setPlainText(req.encode("windows-1251").decode("cp866"))
-
-                with open(f'log/ping {datetime.now().strftime("%H-%M, %m-%d-%Y")}.txt', 'w', encoding='utf-8') as file:
-                    file.write(req.encode("windows-1251").decode("cp866"))
+                self.loadingPing = LoadingPing()
+                self.loadingPing.show()
 
             else:
                 errorDialog.show()
 
         elif self.current_rb == 'Range':
             if self.check_range():
-                values = self.check_range()
-                value = ''
-                for i in range(int(values[0][0].split('.')[-1]), int(values[0][1].split('.')[-1]) + 1):
-                    ip = ''
-                    for j in range(len(values[0][0].split('.')) - 1):
-                        ip += values[0][0].split('.')[j] + '.'
-                    ip += str(i)
-                    ping.show()
-                    ping.plainTextEdit.setReadOnly(True)
-                    value += '\n'
-                    value += parse_ping(ip, values[1], values[2])
-                ping.plainTextEdit.setPlainText(value.encode("windows-1251").decode("cp866"))
-
-                with open(f'log/ping {datetime.now().strftime("%H-%M, %m-%d-%Y")}.txt', 'w', encoding='utf-8') as file:
-                    file.write(value.encode("windows-1251").decode("cp866"))
+                self.loadingPing = LoadingPing()
+                self.loadingPing.show()
             else:
                 errorDialog.show()
 
@@ -602,12 +582,11 @@ class LoadingPing(QWidget):
             else:
                 errorDialog.show()
 
-        elif self.current_rb == 'Link':
+        elif pingDialog.current_rb == 'Link':
             if self.check_link():
                 values = self.check_link()
                 ping.show()
                 ping.plainTextEdit.setReadOnly(True)
-                # ping.plainTextEdit.setPlainText('Загрузка')
                 req = parse_ping(values[0], values[1], values[2])
                 ping.plainTextEdit.setPlainText(req.encode("cp866").decode("windows-1251"))
 
@@ -617,7 +596,7 @@ class LoadingPing(QWidget):
             else:
                 errorDialog.show()
 
-        elif self.current_rb == 'Range':
+        elif pingDialog.current_rb == 'Range':
             if self.check_range():
                 values = self.check_range()
                 value = ''
@@ -626,13 +605,12 @@ class LoadingPing(QWidget):
                     for j in range(len(values[0][0].split('.')) - 1):
                         ip += values[0][0].split('.')[j] + '.'
                     ip += str(i)
-                    ping.show()
-                    ping.plainTextEdit.setReadOnly(True)
-                    # ping.plainTextEdit.setPlainText('Загрузка')
+
                     value += '\n'
                     value += parse_ping(ip, values[1], values[2])
                 ping.plainTextEdit.setPlainText(value.encode("cp866").decode("windows-1251"))
-
+                ping.show()
+                ping.plainTextEdit.setReadOnly(True)
                 with open(f'log/ping {datetime.now().strftime("%H-%M, %m-%d-%Y")}.txt', 'w', encoding='utf-8') as file:
                     file.write(value.encode("cp866").decode("windows-1251"))
             else:
@@ -662,56 +640,56 @@ class LoadingPing(QWidget):
             return ip_address, packets, timeout
 
     def check_link(self):
-        if not self.le_ip.text().isnumeric():
-            ip_address = self.le_ip.text()
+        if not pingDialog.le_ip.text().isnumeric():
+            ip_address = pingDialog.le_ip.text()
         else:
             return False
 
-        if self.le_packets.text() == '':
+        if pingDialog.le_packets.text() == '':
             packets = '4'
-        elif self.le_packets.text().isnumeric() and int(self.le_packets.text()) > 0:
-            packets = self.le_packets.text()
+        elif pingDialog.le_packets.text().isnumeric() and int(pingDialog.le_packets.text()) > 0:
+            packets = pingDialog.le_packets.text()
         else:
             return False
 
-        if self.le_timeout.text() == '':
+        if pingDialog.le_timeout.text() == '':
             timeout = '4'
-        elif self.le_timeout.text().isnumeric() and int(self.le_timeout.text()) > 0:
-            timeout = self.le_timeout.text()
+        elif pingDialog.le_timeout.text().isnumeric() and int(pingDialog.le_timeout.text()) > 0:
+            timeout = pingDialog.le_timeout.text()
         else:
             return False
         return ip_address, packets, timeout
 
     def check_range(self):
         try:
-            ipaddress.ip_address(self.le_ip.text().split()[0])
-            ipaddress.ip_address(self.le_ip.text().split()[1])
+            ipaddress.ip_address(pingDialog.le_ip.text().split()[0])
+            ipaddress.ip_address(pingDialog.le_ip.text().split()[1])
         except ValueError:
             return False
         else:
-            ip_address = [self.le_ip.text().split()[0], self.le_ip.text().split()[1]]
-            if self.le_packets.text() == '':
+            ip_address = [pingDialog.le_ip.text().split()[0], pingDialog.le_ip.text().split()[1]]
+            if pingDialog.le_packets.text() == '':
                 packets = '4'
-            elif self.le_packets.text().isnumeric() and int(self.le_packets.text()) > 0:
-                packets = self.le_packets.text()
+            elif pingDialog.le_packets.text().isnumeric() and int(pingDialog.le_packets.text()) > 0:
+                packets = pingDialog.le_packets.text()
             else:
                 return False
 
-            if self.le_timeout.text() == '':
+            if pingDialog.le_timeout.text() == '':
                 timeout = '4'
-            elif self.le_timeout.text().isnumeric() and int(self.le_timeout.text()) > 0:
-                timeout = self.le_timeout.text()
+            elif pingDialog.le_timeout.text().isnumeric() and int(pingDialog.le_timeout.text()) > 0:
+                timeout = pingDialog.le_timeout.text()
             else:
                 return False
             return ip_address, packets, timeout
 
     def IP_clicked(self):
         self.current_rb = 'IP'
-        pingDialog.le_ip.setPlaceholderText('')
+        pingDialog.le_ip.setPlaceholderText('Пример: 1.1.1.1')
 
     def link_clicked(self):
         self.current_rb = 'Link'
-        pingDialog.le_ip.setPlaceholderText('')
+        pingDialog.le_ip.setPlaceholderText('Пример yandex.ru')
 
     def range_clicked(self):
         self.current_rb = 'Range'

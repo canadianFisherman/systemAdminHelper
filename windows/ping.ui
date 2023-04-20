@@ -38,14 +38,25 @@
      <height>391</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Yu Gothic UI Light</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">color: rgb(190, 190, 190);
 border-style:outset;
-background-color: rgba(255, 255, 255, 0);
-</string>
+background-color: rgba(255, 255, 255, 0);</string>
    </property>
    <property name="plainText">
-    <string/>
+    <string>Проверка подключения к 1.1.1.1
+Пакетов отправлено: 2
+Пакетов получено: 2
+Пакетов потеряно: 0
+Приблизительное время приёма-передачи в мс:
+Минимальное = 16ms, Максимальное = 16ms, Среднее = 16ms
+</string>
    </property>
   </widget>
  </widget>
